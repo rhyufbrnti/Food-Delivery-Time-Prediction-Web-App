@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prediksi Waktu Pengiriman Makanan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f0ff;
+            color: #003366;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        input,
+        select,
+        button {
+            padding: 8px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0059b3;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📈 Prediksi Waktu Pengiriman Makanan 🍔</h1>
+
+    <!-- Form Prediksi -->
+    <form action="/" method="post">
+        <input type="text" name="distance" placeholder="Distance (km)" required>
+        <input type="text" name="prep_time" placeholder="Preparation Time (min)" required>
+        <input type="text" name="experience" placeholder="Courier Experience (yrs)" required>
+        <select name="weather" required>
+            <option value="" disabled selected>--Weather--</option>
+            <option value="Foggy">Foggy</option>
+            <option value="Rainy">Rainy</option>
+            <option value="Snowy">Snowy</option>
+            <option value="Windy">Windy</option>
+            <option value="Clear">Clear</option>
+        </select>
+        <select name="traffic Level" required>
+            <option value="" disabled selected>--Traffic Level--</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <select name="time_of_day" required>
+            <option value="" disabled selected>--time of day--</option>
+            <option value="Morning">Morning</option>
+            <option value="Evening">Evening</option>
+            <option value="Night">Night</option>
+            <option value="Afternoon">Afternoon</option>
+        </select>
+        <select name="vehicle" required>
+            <option value="" disabled selected>--Vehicle Type--</option>
+            <option value="Car">Car</option>
+            <option value="Scooter">Scooter</option>
+            <option value="Bike">Bike</option>
+        </select>
+        <button type="submit">Prediksi</button>
+    </form>
+
+    <!-- Hasil Prediksi -->
+    <h3>{{ prediction_text }}</h3>
+
+    <!-- Scatterplot -->
+    <div class="container">
+        <h2> 🍔🍟🌭🍿🍕🥐🥙🥗🌮🍲🥮🍪🍝🎂🍰🍬🧋 </h2>
+        <img src="data:image/png;base64,{{ plot1 }}">
+        <p>Scatterplot Distance vs Delivery Time menunjukkan tren linear positif, sementara variabel lain tidak linear
+            tetapi tetap berkontribusi meningkatkan akurasi model</p>
+    </div>
+</body>
+
+</html>
